@@ -3,6 +3,6 @@ visuEats native app for iOS and Android devices using React Native framework
 
 ## Getting Started 
 
-use NPM INSTALL in project directory
+use **NPM INSTALL** in project directory
 
-Launch with EXPO START
+Launch metro with **EXPO START**
