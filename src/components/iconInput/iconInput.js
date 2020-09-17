@@ -10,7 +10,7 @@ class CustomInput extends React.Component {
           <Icon
             style={styles.icon}
             name={this.props.name}
-            size={20}
+            size={15}
             color="#0ABAB5"
           />
           <TextInput

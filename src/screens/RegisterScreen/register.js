@@ -65,7 +65,7 @@ class RegisterScreen extends React.Component {
   registerUser = async () => {
     let { name, email, password, confirmPassword } = this.state;
     if (!name || !email || !password || !confirmPassword) {
-      Alert.alert("All feilds required");
+      Alert.alert("An email and password is required");
     } else if (password != confirmPassword) {
       Alert.alert("Password not match");
     } else {
@@ -115,7 +115,7 @@ class RegisterScreen extends React.Component {
     let { email, password } = this.state;
 
     if (!email || !password) {
-      Alert.alert("all feilds required");
+      Alert.alert("An email and password is required");
     } else {
       this.setState({
         loading: true,
@@ -218,7 +218,7 @@ class RegisterScreen extends React.Component {
                   />
                   <TouchableOpacity activeOpacity={0.8} onPress={this.forget}>
                     <Text style={[styles.info, { marginTop: 10 }]}>
-                      Forget Password?
+                      Forgot Password?
                     </Text>
                   </TouchableOpacity>
                   <IconButton

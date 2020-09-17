@@ -6,7 +6,7 @@ const alreadyLoggedInUser = () => {};
 
 const registerUser = async (name, email, password, confirmPassword) => {
   if (!name || !email || !password || !confirmPassword) {
-    Alert.alert("All feilds required");
+    Alert.alert("Email and Password required");
   } else {
     await firebase
       .auth()
@@ -37,7 +37,7 @@ const registerUser = async (name, email, password, confirmPassword) => {
 
 const loginUser = (email, password) => {
   if (!email || !password) {
-    Alert.alert("All feilds required");
+    Alert.alert("Email and Password required");
   } else {
   }
 };
