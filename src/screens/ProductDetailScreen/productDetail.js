@@ -5,9 +5,20 @@ import { ProductDetailHeader } from "../../components";
 import firebase from "../../config/firebase/firebase";
 
 class ProductDetailScreen extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   goBack = () => {
     this.props.navigation.navigate("MenuItem");
   };
+
+  async componentDidMount() {
+    let productDetail = await this.props.route.params.data;
+    this.setState({
+      productDetail,
+    });
+  }
 
   // logout
 
@@ -24,20 +35,25 @@ class ProductDetailScreen extends React.Component {
       });
   };
   render() {
+    let { productDetail } = this.state;
     return (
       <View style={styles.container}>
-        <ProductDetailHeader logout={this.logout} onPress={this.goBack} />
+        <ProductDetailHeader
+          data={productDetail && productDetail}
+          logout={this.logout}
+          onPress={this.goBack}
+        />
         <View style={styles.body}>
-          <Text style={styles.title}>APPETIZER NAME</Text>
+          <Text style={styles.title}>
+            {productDetail && productDetail.name}
+          </Text>
           <Text style={styles.description}>DESCRIPTION</Text>
           <Text style={styles.info}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries
+            {productDetail && productDetail.description}
           </Text>
-          <Text style={styles.description}>$25</Text>
+          <Text style={styles.description}>
+            $ {productDetail && productDetail.price}
+          </Text>
         </View>
       </View>
     );

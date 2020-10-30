@@ -10,7 +10,7 @@ class MenuItemCard extends React.Component {
           <Image
             style={styles.img}
             source={{
-              uri: this.props.data && this.props.data.uri,
+              uri: this.props.data && this.props.data.image,
             }}
           />
           <View style={{ padding: 10 }}>
@@ -47,11 +47,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 7,
     paddingBottom: 5,
+    marginTop: 10,
   },
 
   img: {
     width: 320,
-    height: 130,
+    height: 150,
+    resizeMode: "stretch",
   },
   text: {
     fontSize: 18,
@@ -61,6 +63,7 @@ const styles = StyleSheet.create({
   card_text: {
     flexDirection: "row",
     justifyContent: "space-between",
+    marginTop: 10,
   },
   btn: {
     backgroundColor: "black",

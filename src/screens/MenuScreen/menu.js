@@ -12,8 +12,11 @@ class MenuScreen extends React.Component {
     props.navigation.navigate("Home");
   };
 
-  slect = () => {
-    this.props.navigation.navigate("MenuItem");
+  slect = (productUid) => {
+    this.props.navigation.navigate("MenuItem", {
+      uid: this.state && this.state.uid,
+      productUid: productUid,
+    });
   };
 
   async componentDidMount() {
@@ -26,10 +29,11 @@ class MenuScreen extends React.Component {
       .on("child_added", (snap) => {
         let data = snap.val();
         let key = snap.key;
-        data.uid = key;
+        data.productUid = key;
         allMenus.push(data);
         this.setState({
           allMenus,
+          uid,
         });
       });
   }
@@ -45,7 +49,13 @@ class MenuScreen extends React.Component {
               <>
                 {allMenus &&
                   allMenus.map((v, i) => {
-                    return <MenuCard onPress={this.slect} key={i} data={v} />;
+                    return (
+                      <MenuCard
+                        onPress={() => this.slect(v.productUid)}
+                        key={i}
+                        data={v}
+                      />
+                    );
                   })}
               </>
             ) : (

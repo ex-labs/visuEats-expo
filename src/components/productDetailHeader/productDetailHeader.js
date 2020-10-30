@@ -17,7 +17,9 @@ class ProductDetailHeader extends React.Component {
     return (
       <View style={styles.container}>
         <ImageBackground
-          source={require("../../images/product.png")}
+          source={{
+            uri: this.props.data && this.props.data.image,
+          }}
           style={styles.image}
         >
           <View style={styles.header}>
