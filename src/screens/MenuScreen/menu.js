@@ -30,6 +30,7 @@ class MenuScreen extends React.Component {
         let data = snap.val();
         let key = snap.key;
         data.productUid = key;
+        console.log("menu data ", data);
         allMenus.push(data);
         this.setState({
           allMenus,

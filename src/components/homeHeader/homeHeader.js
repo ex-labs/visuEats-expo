@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "native-base";
+import { View, Text, Button, Icon } from "native-base";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -21,7 +21,10 @@ class HomeHeader extends React.Component {
             </TouchableOpacity>
           </View>
           <IconInput placeholder="Search for your restaurant" name="search" />
-          <IconInput placeholder="Current Location" name="map-marker" />
+          <Button iconLeft style={styles.qrBtn}>
+            <Icon name='eye' />
+            <Text>Scan QR code</Text>
+          </Button>
         </View>
       </View>
     );
@@ -47,6 +50,14 @@ const styles = StyleSheet.create({
   },
   button: {
     flexDirection: "row",
+  },
+  qrBtn: {
+    textAlign: "center",
+    backgroundColor: "#B2D234",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: 20,
+    width: 335
   },
   text: {
     fontWeight: "bold",

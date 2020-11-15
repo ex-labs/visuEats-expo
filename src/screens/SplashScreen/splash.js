@@ -17,7 +17,7 @@ class SplashScreen extends React.Component {
             justifyContent: "center",
           }}
         >
-          <Text style={{ fontSize: 80, color: "white" }}>U</Text>
+          <Text style={{ fontSize: 80, color: "white" }}>...</Text>
         </View>
       </LinearGradient>
     );

@@ -22,7 +22,7 @@ class MenuItemCard extends React.Component {
                 onPress={this.props.onPress}
               >
                 <View style={styles.btn}>
-                  <Text style={styles.btn_text}>SELECT</Text>
+                  <Text style={styles.btn_text}>View Item</Text>
                 </View>
               </TouchableOpacity>
             </View>

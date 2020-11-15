@@ -22,7 +22,7 @@ class MenuItemScreen extends React.Component {
         let data = snap.val();
         let key = snap.key;
         data.uid = key;
-        console.log(data);
+        //console.log("menuItem data ", data);
         allData.push(data);
         this.setState({
           allMenuItems: allData,

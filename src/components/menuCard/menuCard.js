@@ -15,6 +15,7 @@ export default class MenuCard extends React.Component {
     return (
       <ImageBackground
         source={{ uri: this.props.data && this.props.data.image }}
+        //source= {{uri: "https://firebasestorage.googleapis.com/v0/b/practg.appspot.com/o/menu1.png?alt=media&token=fb67924b-e798-4df4-92d4-e0b85e4806a5"}}
         style={styles.image}
       >
         <View style={styles.cardBody}>
@@ -29,7 +30,7 @@ export default class MenuCard extends React.Component {
             activeOpacity={0.7}
             onPress={this.props.onPress}
           >
-            <Text style={styles.name}>SELECT</Text>
+            <Text style={styles.name}>SELECT MENU</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
 
   cardBody: {
     flex: 1,
-    backgroundColor: "#97422c",
+    //backgroundColor: "#97422c",
     alignItems: "center",
     justifyContent: "center",
   },

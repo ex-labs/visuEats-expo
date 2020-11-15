@@ -23,6 +23,10 @@ class HomeHeader extends React.Component {
             <Text style={styles.text}>Back</Text>
           </TouchableOpacity>
         </View>
+        <View style={styles.titleView}>
+          <Text style={styles.title}>Chippies</Text>
+          <Text style={styles.devnote}>*DEV: Props pass Restaurant.Logo/Title here</Text>
+        </View>
       </View>
     );
   }
@@ -32,16 +36,22 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     backgroundColor: "#000000",
-    height: 200,
+    height: 0,
     width: Width,
     flexDirection: "row",
   },
-
+  titleView: {
+    flex: 0,
+    backgroundColor: "#000",
+    //flexDirection: "row",
+    //height: 0
+  },  
   title: {
-    margin: 15,
-    fontSize: 25,
+    marginBottom: 0,
+    fontSize: 45,
     color: "white",
     fontWeight: "bold",
+    textAlign: "center"
   },
 
   button: {
@@ -54,6 +64,12 @@ const styles = StyleSheet.create({
     color: "white",
     margin: 5,
   },
+  devnote: {
+    textAlign: "center",
+    color: "white",
+    fontSize:10,
+    marginBottom:10
+  }
 });
 
 export default HomeHeader;
