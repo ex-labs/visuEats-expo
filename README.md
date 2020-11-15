@@ -6,3 +6,13 @@ visuEats native app for iOS and Android devices using React Native framework
 use **NPM INSTALL** in project directory
 
 Launch metro with **EXPO START**
+
+
+## Dev Pipeline
+
++ QR Lookup Module Implementation: *Pending* - need to fix Native Base compatibility
+
+## Changelog
+
+updating...
+
