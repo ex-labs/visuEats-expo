@@ -6,14 +6,16 @@ import MenuItemScreen from "./MenuItemScreen/menuItem";
 import ProductDetailScreen from "./ProductDetailScreen/productDetail";
 import ForgetScreen from "./ForgetScreen/forget";
 import IntroScreen from "./IntroScreen/introScreen";
+import BarCodeScannerScreen from "./BarCodeScannerScreen/barCodeScanner";
 
 export {
-  SplashScreen,
-  RegisterScreen,
-  HomeScreen,
-  MenuScreen,
-  MenuItemScreen,
-  ProductDetailScreen,
-  ForgetScreen,
-  IntroScreen,
+    SplashScreen,
+    RegisterScreen,
+    HomeScreen,
+    MenuScreen,
+    MenuItemScreen,
+    ProductDetailScreen,
+    ForgetScreen,
+    IntroScreen,
+    BarCodeScannerScreen,
 };
