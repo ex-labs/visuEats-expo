@@ -14,10 +14,11 @@ class MenuScreen extends React.Component {
         props.navigation.navigate("Home");
     };
 
-    slect = (productUid) => {
+    select = (productUid, name) => {
         this.props.navigation.navigate("MenuItem", {
             uid: this.state && this.state.uid,
             productUid: productUid,
+            name: name,
         });
     };
 
@@ -63,14 +64,14 @@ class MenuScreen extends React.Component {
         let { allMenus } = this.state;
         return (
             <View style={styles.container}>
-                <MenuItemHeader onPress={() => this.goBack(this.props)} logo={this.state.logo} />
+                <MenuItemHeader title={this.props.route.params.name} onPress={() => this.goBack(this.props)} logo={this.state.logo} />
                 <View style={styles.body}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                         {allMenus ? (
                             <>
                                 {allMenus &&
                                     allMenus.map((v, i) => {
-                                        return <MenuCard onPress={() => this.slect(v.productUid)} key={i} data={v} />;
+                                        return <MenuCard onPress={() => this.select(v.productUid, v.name)} key={i} data={v} />;
                                     })}
                             </>
                         ) : (

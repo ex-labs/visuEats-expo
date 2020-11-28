@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text } from "native-base";
-import { StyleSheet, TouchableOpacity, Dimensions, Image } from "react-native";
+import { StyleSheet, TouchableOpacity, Dimensions, Image, Platform } from "react-native";
+import Constants from "expo-constants";
 import { MaterialIcons } from "@expo/vector-icons";
 const Width = Dimensions.get("window").width;
 
@@ -9,7 +10,6 @@ class HomeHeader extends React.Component {
         return (
             <View
                 style={{
-                    height: this.props.logo ? 220 : 150,
                     backgroundColor: "#000",
                 }}
             >
@@ -21,7 +21,7 @@ class HomeHeader extends React.Component {
                 </View>
                 <View style={styles.titleView}>
                     {this.props.logo ? <Image style={{ height: 35, width: 35 }} source={{ uri: this.props.logo }}></Image> : null}
-                    <Text style={styles.title}>Chippies</Text>
+                    <Text style={styles.title}>{this.props.title}</Text>
                     <Text style={styles.devnote}>*DEV: Props pass Restaurant.Logo/Title here</Text>
                 </View>
             </View>
@@ -31,7 +31,6 @@ class HomeHeader extends React.Component {
 
 const styles = StyleSheet.create({
     header: {
-        flex: 1,
         width: Width,
         flexDirection: "row",
     },
@@ -44,14 +43,14 @@ const styles = StyleSheet.create({
     },
     title: {
         marginBottom: 0,
-        fontSize: 40,
+        fontSize: 30,
         color: "white",
         fontWeight: "bold",
         textAlign: "center",
     },
     button: {
         flexDirection: "row",
-        paddingTop: 30,
+        marginTop: Platform.OS === "ios" ? 5 : Constants.statusBarHeight + 5,
     },
     text: {
         fontWeight: "bold",

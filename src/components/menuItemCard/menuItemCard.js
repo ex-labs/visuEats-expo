@@ -6,23 +6,19 @@ class MenuItemCard extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.main}>
-                    <Image
-                        style={styles.img}
-                        source={{
-                            uri: this.props.data && this.props.data.image,
-                        }}
-                    />
-                    <View style={{ padding: 10 }}>
-                        <Text style={styles.text}>{this.props.name}</Text>
-                        <View style={styles.card_text}>
-                            <Text>{this.props.price}</Text>
-                            <TouchableOpacity activeOpacity={0.6} onPress={this.props.onPress}>
-                                <View style={styles.btn}>
-                                    <Text style={styles.btn_text}>View Item</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
+                <Image
+                    style={styles.img}
+                    source={{
+                        uri: this.props.data && this.props.data.image,
+                    }}
+                />
+                <View style={{ paddingVertical: 10, paddingHorizontal: 15 }}>
+                    <Text style={styles.text}>{this.props.name}</Text>
+                    <View style={styles.card_text}>
+                        <Text>{this.props.price}</Text>
+                        <TouchableOpacity style={styles.btn} activeOpacity={0.6} onPress={this.props.onPress}>
+                            <Text style={styles.btn_text}>View Item</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -32,7 +28,8 @@ class MenuItemCard extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 5,
+        marginHorizontal: 15,
+        marginVertical: 10,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -44,11 +41,9 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         borderRadius: 7,
         paddingBottom: 5,
-        marginTop: 10,
+        overflow: "hidden",
     },
-
     img: {
-        width: 320,
         height: 150,
         resizeMode: "cover",
     },
@@ -60,12 +55,13 @@ const styles = StyleSheet.create({
     card_text: {
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center",
         marginTop: 10,
     },
     btn: {
         backgroundColor: "black",
-        width: 70,
-        height: 20,
+        paddingVertical: 7.5,
+        paddingHorizontal: 12.5,
         borderRadius: 20,
         fontSize: 10,
     },

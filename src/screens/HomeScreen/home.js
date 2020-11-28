@@ -9,6 +9,7 @@ class HomeScreen extends React.Component {
         super();
         this.state = {
             email: "",
+            searchQuery: "",
         };
     }
 
@@ -42,7 +43,7 @@ class HomeScreen extends React.Component {
             .child(`users/${userUid}/recents/${data.uid}`)
             .set(data)
             .then(() => {
-                this.props.navigation.navigate("Menu", { uid: data.uid, logo: data.logo, verified: true });
+                this.props.navigation.navigate("Menu", { uid: data.uid, logo: data.logo, verified: true, name: data.name });
             })
             .catch((err) => {
                 Alert.alert(err.message);
@@ -64,10 +65,15 @@ class HomeScreen extends React.Component {
     };
 
     render() {
-        let { allRestaurants } = this.state;
+        let { allRestaurants, searchQuery } = this.state;
+
+        console.log(allRestaurants);
         return (
             <View style={styles.container}>
                 <HomeHeader
+                    onSearch={(e) => {
+                        this.setState({ searchQuery: e.nativeEvent.text });
+                    }}
                     qrCodeButtonPress={() => {
                         this.props.navigation.navigate("BarCodeScanner");
                     }}
@@ -75,16 +81,18 @@ class HomeScreen extends React.Component {
                 />
                 <ScrollView>
                     <View style={styles.body}>
-                        <View style={{ marginHorizontal: 30 }}>
+                        <View style={{ marginHorizontal: 20 }}>
                             <Text style={styles.title}>Start your unique visual experience</Text>
                             <Text style={styles.info}>Find your restaurant and start browsing the menu</Text>
                         </View>
 
                         <View>
                             {allRestaurants &&
-                                allRestaurants.map((v, i) => {
-                                    return <RestaurantCard onPress={() => this.select(v)} key={i} data={v} />;
-                                })}
+                                allRestaurants
+                                    .filter((e) => e.name.toUpperCase().indexOf(searchQuery.toUpperCase()) > -1)
+                                    .map((v, i) => {
+                                        return <RestaurantCard onPress={() => this.select(v)} key={i} data={v} />;
+                                    })}
                         </View>
                     </View>
                 </ScrollView>
@@ -99,7 +107,7 @@ const styles = StyleSheet.create({
     },
     body: {
         justifyContent: "center",
-        marginVertical: 30,
+        paddingVertical: 10,
     },
 
     title: {

@@ -11,15 +11,15 @@ import MenuCard from "./menuCard/menuCard";
 import ProductDetailHeader from "./productDetailHeader/productDetailHeader";
 
 export {
-  RegisterHeader,
-  HomeHeader,
-  Button,
-  Input,
-  IconButton,
-  RestaurantCard,
-  IconInput,
-  MenuItemHeader,
-  MenuItemCard,
-  MenuCard,
-  ProductDetailHeader,
+    RegisterHeader,
+    HomeHeader,
+    Button,
+    Input,
+    IconButton,
+    RestaurantCard,
+    IconInput,
+    MenuItemHeader,
+    MenuItemCard,
+    MenuCard,
+    ProductDetailHeader,
 };

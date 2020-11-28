@@ -2,26 +2,31 @@ import React from "react";
 import { View, Text, Button, Icon } from "native-base";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import Constants from "expo-constants";
 
 import { IconInput } from "../";
 
 class HomeHeader extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.header}>
-                    <View style={{ marginVertical: 30, marginHorizontal: "5%" }}>
-                        <TouchableOpacity activeOpacity={0.7} onPress={this.props.onPress} style={styles.button}>
-                            <Text style={styles.text}>Logout</Text>
-                            <AntDesign name="logout" size={20} color="white" />
-                        </TouchableOpacity>
-                    </View>
-                    <IconInput placeholder="Search for your restaurant" name="search" />
-                    <Button onPress={this.props.qrCodeButtonPress} iconLeft style={styles.qrBtn}>
-                        <Icon name="eye" />
-                        <Text>Scan QR code</Text>
-                    </Button>
+            <View style={styles.header}>
+                <View
+                    style={{
+                        marginTop: Platform.OS === "ios" ? 15 : Constants.statusBarHeight + 15,
+                        marginBottom: 15,
+                        marginHorizontal: "5%",
+                    }}
+                >
+                    <TouchableOpacity activeOpacity={0.7} onPress={this.props.onPress} style={styles.button}>
+                        <Text style={styles.text}>Logout</Text>
+                        <AntDesign name="logout" size={20} color="white" />
+                    </TouchableOpacity>
                 </View>
+                <IconInput onChange={this.props.onSearch} placeholder="Search for your restaurant" name="search" />
+                <Button onPress={this.props.qrCodeButtonPress} iconLeft style={styles.qrBtn}>
+                    <Icon name="eye" />
+                    <Text>Scan QR code</Text>
+                </Button>
             </View>
         );
     }
@@ -30,8 +35,8 @@ class HomeHeader extends React.Component {
 const styles = StyleSheet.create({
     header: {
         backgroundColor: "#00a8ac",
-        height: 200,
         alignItems: "flex-end",
+        paddingBottom: 15,
     },
     title: {
         margin: 15,

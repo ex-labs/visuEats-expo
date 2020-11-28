@@ -37,11 +37,12 @@ class MenuItemScreen extends React.Component {
     selectItem = (v) => {
         this.props.navigation.navigate("ProductDetail", { data: v });
     };
+
     render() {
         let { allMenuItems } = this.state;
         return (
             <View style={styles.container}>
-                <MenuItemHeader onPress={this.goBack} />
+                <MenuItemHeader title={this.props.route.params.name} onPress={this.goBack} />
                 <View style={styles.body}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                         {allMenuItems ? (
@@ -74,7 +75,6 @@ class MenuItemScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
     },
     body: {
         flex: 1,
