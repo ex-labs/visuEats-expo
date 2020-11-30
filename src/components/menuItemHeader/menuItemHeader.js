@@ -20,9 +20,9 @@ class HomeHeader extends React.Component {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.titleView}>
-                    {this.props.logo ? <Image style={{ height: 35, width: 35 }} source={{ uri: this.props.logo }}></Image> : null}
+                    {this.props.logo ? <Image style={{ height: 70, width: 70, borderRadius:10, marginBottom:10 }} source={{ uri: this.props.logo }}></Image> : null}
                     <Text style={styles.title}>{this.props.title}</Text>
-                    <Text style={styles.devnote}>*DEV: Props pass Restaurant.Logo/Title here</Text>
+                    {/* <Text style={styles.devnote}>*Tagline</Text> */}
                 </View>
             </View>
         );
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     header: {
         width: Width,
         flexDirection: "row",
+        paddingTop: 30
     },
     titleView: {
         flexDirection: "column",
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     },
     title: {
         marginBottom: 0,
-        fontSize: 30,
+        fontSize: 25,
         color: "white",
         fontWeight: "bold",
         textAlign: "center",

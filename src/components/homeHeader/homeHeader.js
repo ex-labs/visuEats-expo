@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#00a8ac",
         alignItems: "flex-end",
         paddingBottom: 15,
+        paddingTop: 30
     },
     title: {
         margin: 15,

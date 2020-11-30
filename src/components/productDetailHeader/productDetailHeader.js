@@ -38,13 +38,14 @@ class ProductDetailHeader extends React.Component {
 const styles = StyleSheet.create({
     image: {
         width: screenWidth,
-        height: 240,
+        height: 400,
     },
     header: {
         paddingTop: Platform.OS === "ios" ? 15 : Constants.statusBarHeight + 15,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
+        paddingTop: 50
     },
     button: {
         flexDirection: "row",

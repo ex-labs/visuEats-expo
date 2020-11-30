@@ -46,9 +46,10 @@ class ProductDetailScreen extends React.Component {
                 <ProductDetailHeader data={productDetail && productDetail} logout={this.logout} onPress={this.goBack} />
                 <View style={styles.body}>
                     <Text style={styles.title}>{productDetail && productDetail.name}</Text>
-                    <Text style={styles.description}>DESCRIPTION</Text>
+                    {/* <Text style={styles.description}>DESCRIPTION</Text> */}
+                    <Text style={styles.price}>${productDetail && productDetail.price}</Text>
                     <Text style={styles.info}>{productDetail && productDetail.description}</Text>
-                    <Text style={styles.description}>$ {productDetail && productDetail.price}</Text>
+                    <Text style={styles.description}>Additional Media</Text>
                     {productDetail && productDetail.video_url ? (
                         <Video
                             source={{ uri: productDetail.video_url }}
@@ -58,7 +59,7 @@ class ProductDetailScreen extends React.Component {
                             resizeMode="cover"
                             shouldPlay
                             isLooping
-                            style={{ height: 200 }}
+                            style={{ height: 200, borderRadius:10 }}
                         />
                     ) : null}
                 </View>
@@ -76,17 +77,26 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
     },
     description: {
-        color: "red",
-        fontSize: 17,
-        marginVertical: 10,
+        color: "#EF9070",
+        fontSize: 12,
+        //marginVertical: 5,
+        fontWeight: "bold",
+        marginTop:30,
+        marginBottom: 10
+    },
+    price: {
+        color: "#EF9070",
+        fontSize: 25,
+        marginVertical: 1,
+        fontWeight: "bold"
     },
     info: {
-        color: "#CECACA",
+        color: "#9C9898",
         textAlign: "justify",
         marginVertical: 10,
     },
     title: {
-        fontSize: 22,
+        fontSize: 35,
         fontWeight: "bold",
         textTransform: "uppercase",
         marginVertical: 5,

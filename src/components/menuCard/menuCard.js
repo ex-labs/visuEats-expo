@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
   cardBody: {
     flex: 1,
-    //backgroundColor: "#97422c",
+    backgroundColor: "#97422c9e",
     alignItems: "center",
     justifyContent: "center",
   },
