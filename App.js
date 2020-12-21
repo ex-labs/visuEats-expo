@@ -25,7 +25,9 @@ export default class App extends React.Component {
 
   render() {
     if (!this.state.isReady) {
-      return <SplashScreen />;
+      //return <SplashScreen />;
+      //We'll re-add splash/intro slide later
+      return <AppNavigation />
     }
 
     return <AppNavigation />;
