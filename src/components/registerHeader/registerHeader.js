@@ -17,13 +17,13 @@ class RegisterHeader extends React.Component {
 const styles = StyleSheet.create({
     header: {
         backgroundColor: "#00a8ac",
-        height: 150,
+        height: 130,
         justifyContent: "center",
         alignItems: "center",
     },
 
     image: {
-        width: 200,
+        width: 150,
         resizeMode: "contain",
         marginTop: 20,
     },

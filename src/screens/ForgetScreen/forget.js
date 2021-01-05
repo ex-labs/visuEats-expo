@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "native-base";
-import { StyleSheet, ScrollView, Alert } from "react-native";
+import { StyleSheet, ScrollView, Alert, TouchableOpacity } from "react-native";
 import { RegisterHeader, Button, Input } from "../../components";
 import firebase from "../../config/firebase/firebase";
 
@@ -12,6 +12,12 @@ class ForgetScreen extends React.Component {
       loading: false,
     };
   }
+
+  // back to register
+
+  backtologin = () => {
+    this.props.navigation.navigate("Register");
+  };
 
   handelReset = async () => {
     let { email } = this.state;
@@ -50,8 +56,8 @@ class ForgetScreen extends React.Component {
           <View style={styles.body}>
             <View>
               <Text style={styles.info}>
-                By continuing, you agree to visuEats` Terms of Service and
-                acknowledge vishuEats` Privacy Policy.
+                By continuing, you agree to visuEats' Terms of Service and
+                acknowledge visuEats' Privacy Policy.
               </Text>
             </View>
             <View>
@@ -73,6 +79,11 @@ class ForgetScreen extends React.Component {
                 name={loading ? "Loading..." : "RESET PASSWORD"}
               />
             </View>
+            <TouchableOpacity activeOpacity={0.8} onPress={this.backtologin}>
+                    <Text style={[styles.info, { marginTop: 10, textAlign: "center" }]}>
+                      Return to Login/Signup
+                    </Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>

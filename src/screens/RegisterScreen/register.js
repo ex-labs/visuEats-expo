@@ -165,16 +165,16 @@ class RegisterScreen extends React.Component {
               <View>
                 <Text style={styles.title}>Welcome</Text>
                 <Text style={styles.info}>
-                  By continuing, you agree to visuEats` Terms of Service and
-                  acknowledge vishuEats` Privacy Policy.
+                  By continuing, you agree to visuEats' Terms of Service and
+                  acknowledge visuEats' Privacy Policy.
                 </Text>
               </View>
             ) : (
               <View>
                 <Text style={styles.title}>SIGN UP</Text>
                 <Text style={styles.info}>
-                  By continuing, you agree to visuEats` Terms of Service and
-                  acknowledge vishuEats` Privacy Policy.
+                  By continuing, you agree to visuEats' Terms of Service and
+                  acknowledge visuEats' Privacy Policy.
                 </Text>
               </View>
             )}
@@ -247,6 +247,7 @@ class RegisterScreen extends React.Component {
                     }
                     title="Email"
                     value={email}
+                    password={false}
                   />
                   <Input
                     underlineColorAndroid="transparent"
@@ -282,6 +283,9 @@ class RegisterScreen extends React.Component {
                 </>
               )}
             </View>
+            <View style={styles.spacer}>
+              {/* Spacer */}
+            </View>
           </View>
         </ScrollView>
       </View>
@@ -300,7 +304,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#00a8ac",
   },
@@ -316,6 +320,9 @@ const styles = StyleSheet.create({
     color: "#00a8ac",
     fontSize: 14,
   },
+  spacer: {
+    height:150
+  }
 });
 
 export default RegisterScreen;

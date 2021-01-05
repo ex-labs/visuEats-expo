@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 
 import { Rating, AirbnbRating } from "react-native-ratings";
+import { block } from "react-native-reanimated";
 
 class Card extends React.Component {
     render() {
@@ -18,6 +19,8 @@ class Card extends React.Component {
                         <View>
                             <Text style={styles.name}>{this.props.data && this.props.data.name}</Text>
                             <Text style={styles.tagline}>{this.props.data && this.props.data.tagline}</Text>
+                            <Text style={styles.address}>{this.props.data && this.props.data.address}</Text>
+                            <Text style={styles.hours}>{this.props.data && this.props.data.hours}</Text>
                         </View>
                         <View>
                             <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={this.props.onPress}>
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.34,
         shadowRadius: 6.27,
         elevation: 3,
-        height: 250,
+        height: 270,
         backgroundColor: "white",
         borderRadius: 7,
     },
@@ -86,6 +89,17 @@ const styles = StyleSheet.create({
     tagline: {
         color: "#ACACAC",
         fontWeight: "bold",
+    },
+    address: {
+        color: "#ACACAC",
+        fontSize: 11,
+        marginTop:3
+    },
+    hours: {
+        color: "#ACACAC",
+        fontSize: 11,
+        fontWeight: "bold",
+        marginTop:3
     },
     text: {
         color: "white",
