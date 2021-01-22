@@ -4,7 +4,7 @@
     "slug": "visuEats",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/ve-icon.png",
+    "icon": "./assets/ve-icon.jpg",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
