@@ -4,7 +4,7 @@
     "slug": "visuEats",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/ve-icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -18,14 +18,18 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.visueats.visuEats"
+      "bundleIdentifier": "com.visueats.visuEats",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses your camera to scan QR codes for quick menu lookups."
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "Phase2 demo",
+    "description": "2020 MVP",
     "android": {
-      "package": "com.visueats.visuEats"
+      "package": "com.visueats.visuEats",
+      "permissions": ["CAMERA"]
     }
   }
 }
