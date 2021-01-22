@@ -29,7 +29,8 @@
     "description": "2020 MVP",
     "android": {
       "package": "com.visueats.visuEats",
-      "permissions": ["CAMERA"]
+      "permissions": ["CAMERA"],
+      "versionCode": 2
     }
   }
 }
