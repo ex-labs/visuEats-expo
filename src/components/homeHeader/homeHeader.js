@@ -17,10 +17,10 @@ class HomeHeader extends React.Component {
                         marginHorizontal: "5%",
                     }}
                 >
-                    <TouchableOpacity activeOpacity={0.7} onPress={this.props.onPress} style={styles.button}>
+                   { /* <TouchableOpacity activeOpacity={0.7} onPress={this.props.onPress} style={styles.button}>
                         <Text style={styles.text}>Logout</Text>
                         <AntDesign name="logout" size={20} color="white" />
-                    </TouchableOpacity>
+                    </TouchableOpacity> */ }
                 </View>
                 <IconInput onChange={this.props.onSearch} placeholder="Search for your restaurant" name="search" />
                 <Button onPress={this.props.qrCodeButtonPress} iconLeft style={styles.qrBtn}>

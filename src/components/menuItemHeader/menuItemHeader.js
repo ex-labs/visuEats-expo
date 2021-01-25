@@ -15,7 +15,7 @@ class HomeHeader extends React.Component {
             >
                 <View style={styles.header}>
                     <TouchableOpacity activeOpacity={0.7} onPress={this.props.onPress} style={styles.button}>
-                        <MaterialIcons name="arrow-back" style={{ margin: 5 }} size={20} color="white" />
+                        <MaterialIcons name="arrow-back" style={{ margin: 5, paddingTop:5 }} size={20} color="white" />
                         <Text style={styles.text}>Back</Text>
                     </TouchableOpacity>
                 </View>
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "white",
         margin: 5,
+        paddingTop:5,
     },
     devnote: {
         textAlign: "center",
