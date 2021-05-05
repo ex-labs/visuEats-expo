@@ -21,6 +21,7 @@ class Card extends React.Component {
                             <Text style={styles.tagline}>{this.props.data && this.props.data.tagline}</Text>
                             <Text style={styles.address}>{this.props.data && this.props.data.address}</Text>
                             <Text style={styles.hours}>{this.props.data && this.props.data.hours}</Text>
+                            <Text style={styles.hours}>{this.props.data && this.props.data.phone}</Text>
                         </View>
                         <View>
                             <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={this.props.onPress}>
@@ -30,15 +31,15 @@ class Card extends React.Component {
                     </View>
                     <View style={styles.row}>
                         <View style={{ marginVertical: 10 }}>
-                            <AirbnbRating
+                           {/* <AirbnbRating
                                 count={5}
                                 showRating={false}
                                 defaultRating={this.props.data && this.props.data.rating}
                                 size={20}
-                            />
+                           /> */}
                         </View>
                         <View style={{ marginVertical: 10 }}>
-                            <Text style={[styles.text, { color: "#00a8ac", fontSize: 20 }]}>
+                            <Text style={[styles.text, { color: "#00a8ac", fontSize: 10 }]}>
                                 {this.props.data && this.props.data.price}
                             </Text>
                         </View>
@@ -98,6 +99,12 @@ const styles = StyleSheet.create({
     hours: {
         color: "#ACACAC",
         fontSize: 11,
+        fontWeight: "bold",
+        marginTop:3
+    },
+    phone: {
+        color: "#000",
+        fontSize: 9,
         fontWeight: "bold",
         marginTop:3
     },
