@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button, Icon } from "native-base";
 import { StyleSheet, ScrollView, AsyncStorage, Alert } from "react-native";
+import * as Location from 'expo-location';
 import { HomeHeader, RestaurantCard } from "../../components";
 import { AntDesign } from "@expo/vector-icons";
 import firebase from "../../config/firebase/firebase";
@@ -11,8 +12,14 @@ class HomeScreen extends React.Component {
         this.state = {
             email: "",
             searchQuery: "",
+            loccity: "",
+            locationCity: "",
+            locationCountry: "",
+            latitude: 35.681236,
+            longitude: 139.767125,
         };
     }
+
 
     getdata = () => {
         console.log('here');
@@ -49,6 +56,24 @@ class HomeScreen extends React.Component {
             });
     }
 
+    updateState(location) {
+        this.setState({
+          ...this.state,
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+          //loccity: location.city
+        });
+    }
+
+    updateGeo(geoCode) {
+        this.setState({
+          ...this.state,
+          locationCity: geoCode[0].city,
+          locationCountry: geoCode[0].country,
+          //loccity: location.city
+        });
+    }
+
     async componentDidMount() {
         let user = await AsyncStorage.getItem("token");
         user = JSON.parse(user);
@@ -57,6 +82,23 @@ class HomeScreen extends React.Component {
         });
         this.getdata();
         //this.updatedata();
+        //this.getLoc();
+        try {
+            let { status } = await Location.requestPermissionsAsync();
+            if (status !== 'granted') {
+              return;
+            }
+            let location = await Location.getCurrentPositionAsync({});
+            this.updateState(location);
+            console.log(location);
+            
+            let geoCode = await Location.reverseGeocodeAsync({ latitude: location.coords.latitude, longitude: location.coords.longitude });
+            console.log(geoCode);
+            //this.updateGeo(geoCode);
+          } catch (error) {
+            console.log(error);
+          }
+        //console.log(latitude);
     }
 
     select = (data) => {
@@ -67,7 +109,7 @@ class HomeScreen extends React.Component {
             .child(`users/${userUid}/recents/${data.uid}`)
             .set(data)
             .then(() => {
-                this.props.navigation.navigate("Menu", { uid: data.uid, logo: data.logo, verified: true, name: data.name });
+                this.props.navigation.navigate("Menu", { uid: data.uid, logo: data.logo, verified: true, name: data.name, city: data.city });
             })
             .catch((err) => {
                 Alert.alert(err.message);
@@ -89,7 +131,7 @@ class HomeScreen extends React.Component {
     };
 
     render() {
-        let { allRestaurants, searchQuery } = this.state;
+        let { allRestaurants, searchQuery, locationCity } = this.state;
 
 
         console.log(allRestaurants);
@@ -119,6 +161,7 @@ class HomeScreen extends React.Component {
                             {allRestaurants &&
                                 allRestaurants
                                     .filter((e) => e.name.toUpperCase().indexOf(searchQuery.toUpperCase()) > -1)
+                                    .filter((e) => e.city.toUpperCase().indexOf(locationCity.toUpperCase()) > -1)
                                     .map((v, i) => {
                                         if(v.archived) {
                                             return null
@@ -143,7 +186,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: "bold",
         color: "#00a8ac",
         textAlign: 'center'

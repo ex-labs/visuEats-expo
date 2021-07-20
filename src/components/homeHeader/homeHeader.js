@@ -22,11 +22,18 @@ class HomeHeader extends React.Component {
                         <AntDesign name="logout" size={20} color="white" />
                     </TouchableOpacity> */ }
                 </View>
-                <IconInput onChange={this.props.onSearch} placeholder="Search for your restaurant" name="search" />
-                <Button onPress={this.props.qrCodeButtonPress} iconLeft style={styles.qrBtn}>
-                    <Icon name="eye" />
-                    <Text>Scan QR code</Text>
-                </Button>
+                <IconInput onChange={this.props.onSearch} placeholder="Search for your restaurant by name" name="search" />
+                <IconInput onChange={this.props.onSearch} placeholder="Search for your restaurant by name" name="search" />
+                <View style ={{ flexDirection: "row", flexWrap:"wrap", width: "92%", justifyContent: "justify", alignItems: "center", marginRight:17}}>
+                    <Button onPress={this.props.qrCodeButtonPress} iconLeft style={styles.qrBtn}>
+                        <Icon name="eye" />
+                        <Text>Scan QR code</Text>
+                    </Button>
+                    <Button onPress={this.props.qrCodeButtonPress} iconLeft style={styles.locBtn}>
+                        <Icon name="navigate" />
+                        <Text>Use Your Location</Text>
+                    </Button>
+                </View>
             </View>
         );
     }
@@ -57,8 +64,18 @@ const styles = StyleSheet.create({
         backgroundColor: "#B2D234",
         justifyContent: "center",
         alignItems: "center",
-        marginLeft: "5%",
-        width: "90%",
+        marginLeft: 5,
+        marginRight: 2,
+        width: "48%",
+    },
+    locBtn: {
+        textAlign: "center",
+        backgroundColor: "#ff0000",
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: 5,
+        marginRight: 2,
+        width: "48%",
     },
     text: {
         fontWeight: "bold",

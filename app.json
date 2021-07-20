@@ -2,7 +2,7 @@
   "expo": {
     "name": "visuEats",
     "slug": "visuEats",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -20,7 +20,8 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.visueats.visuEats",
       "infoPlist": {
-        "NSCameraUsageDescription": "This app uses your camera to scan QR codes for quick menu lookups."
+        "NSCameraUsageDescription": "This app uses your camera to scan QR codes for quick menu lookups.",
+        "NSLocationWhenInUseUsageDescription": "This app uses your location, to find restaurants in your area."
       }
     },
     "web": {
@@ -29,8 +30,8 @@
     "description": "2020 MVP",
     "android": {
       "package": "com.visueats.visuEats",
-      "permissions": ["CAMERA"],
-      "versionCode": 2
+      "permissions": ["CAMERA", "ACCESS_COARSE_LOCATION"],
+      "versionCode": 3
     }
   }
 }

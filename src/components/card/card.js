@@ -19,7 +19,8 @@ class Card extends React.Component {
                         <View>
                             <Text style={styles.name}>{this.props.data && this.props.data.name}</Text>
                             <Text style={styles.tagline}>{this.props.data && this.props.data.tagline}</Text>
-                            <Text style={styles.address}>{this.props.data && this.props.data.address}</Text>
+                            <Text style={styles.address}>{this.props.data && this.props.data.address}, {this.props.data && this.props.data.city}</Text>
+                            {/* <Text style={styles.address}>{this.props.data && this.props.data.city}</Text> */}
                             <Text style={styles.hours}>{this.props.data && this.props.data.hours}</Text>
                             <Text style={styles.hours}>{this.props.data && this.props.data.phone}</Text>
                         </View>
