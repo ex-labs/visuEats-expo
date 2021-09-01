@@ -14,11 +14,10 @@ https://docs.expo.io/versions/latest/sdk/video/
 
 
 
-## Dev Pipeline
+## Feat Pipeline
 
-+ QR Lookup Module Implementation: *Pending* - need to fix Native Base compatibility
++ QR Lookup Module Implementation: Applied
++ Location based search UI fix: pending
 
-## Changelog
 
-updating...
 

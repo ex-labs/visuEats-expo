@@ -13,7 +13,7 @@ class HomeScreen extends React.Component {
             email: "",
             searchQuery: "",
             loccity: "",
-            locationCity: "",
+            locationCity: "San Francisco",
             locationCountry: "",
             latitude: 35.681236,
             longitude: 139.767125,
