@@ -1,5 +1,5 @@
 # visuEats-expo
-visuEats native app for iOS and Android devices using React Native framework
+visuEats native app for iOS and Android devices using React Native and  Native Base.
 
 ## Getting Started 
 
@@ -9,8 +9,8 @@ Launch metro with **EXPO START**
 
 
 ## Components Used
-https://docs.expo.io/versions/latest/sdk/bar-code-scanner/
-https://docs.expo.io/versions/latest/sdk/video/
++ https://docs.expo.io/versions/latest/sdk/bar-code-scanner/
++ https://docs.expo.io/versions/latest/sdk/video/
 
 
 
