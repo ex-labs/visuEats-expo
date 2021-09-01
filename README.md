@@ -23,3 +23,9 @@ https://docs.expo.io/versions/latest/sdk/video/
 ## Deployment
 
 "visueats" EXPO account
+
+```
+expo build
+```
+
+For iOS and Android upload see -> https://docs.expo.dev/distribution/app-stores/
