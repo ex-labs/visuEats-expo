@@ -20,4 +20,6 @@ https://docs.expo.io/versions/latest/sdk/video/
 + Location based search UI fix: pending
 
 
+## Deployment
 
+"visueats" EXPO account
